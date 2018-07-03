@@ -23,7 +23,10 @@ public class UserID extends javax.swing.JFrame {
 Integer idV;
     public UserID(Integer id) {
      idV=id;
+   
+     
      initComponents();
+    
     }
 
     UserID() {
@@ -97,7 +100,7 @@ Integer idV;
     }// </editor-fold>//GEN-END:initComponents
 
     private void ConfirmarIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfirmarIdActionPerformed
-
+        
          Integer id = Integer.parseInt(idField.getText());
          ViagemDAO.nUsr(idV, id);
          setVisible(false);

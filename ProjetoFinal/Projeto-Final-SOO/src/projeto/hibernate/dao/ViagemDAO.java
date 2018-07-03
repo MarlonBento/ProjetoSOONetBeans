@@ -48,6 +48,7 @@ public class ViagemDAO {
 		session.beginTransaction();
 		viagem.getUsuario().add(usuario);
 		session.update(viagem);	
+                session.update(usuario);
 		session.getTransaction().commit(); 
 		session.close();
 		

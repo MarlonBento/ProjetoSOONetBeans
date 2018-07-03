@@ -195,11 +195,11 @@ public class ViagemFormView extends javax.swing.JFrame {
         ViagemDAO.create(viagem);
 
         setVisible(false);
-        for (i=0; i<nUsr; i++){
+         for (i=0; i<nUsr; i++){
         UserID uID = new UserID(viagem.getId());
         uID.setVisible(true);
+         }
         
-        }
         
         
         

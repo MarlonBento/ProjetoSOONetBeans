@@ -110,13 +110,12 @@ public class FormID extends javax.swing.JFrame {
                         principal.setVisible(true);
                         break;
                     case "BuscarF":   
-                        Funcionario funcionario =FuncionarioDAO.read(id);
-                        System.out.println("Nome: " + funcionario.getNome());
-                        System.out.println("CPF: " + funcionario.getCpf());
-                        System.out.println("Contato: " +funcionario.getContato());
+                        BuscaFuncionario bf = new BuscaFuncionario(FuncionarioDAO.read(id));
                         setVisible(false);
-                        principal = new Principal();
-                        principal.setVisible(true);
+                        bf.setVisible(true);
+                        
+                        
+                        
                         break;    
                     case "AddVeic":
                        VeiculoFormView vfv = new VeiculoFormView(id);
@@ -138,13 +137,9 @@ public class FormID extends javax.swing.JFrame {
                         break;
                     
                     case "BuscarU":
-                        Usuario usuario =UsuarioDAO.read(id);
-                        System.out.println("Nome: " + usuario.getNome());
-                        System.out.println("CPF: " + usuario.getCpf());
-                        System.out.println("Idade: " + usuario.getIdade());
+                        BuscaUsuario bu = new BuscaUsuario(UsuarioDAO.read(id));
                         setVisible(false);
-                        principal = new Principal();
-                        principal.setVisible(true);
+                        bu.setVisible(true);
                         break;
                         
                     case "addEnd":
@@ -156,10 +151,9 @@ public class FormID extends javax.swing.JFrame {
                   
                         
                     case "BuscarViagem":
-                            Viagem viagem = ViagemDAO.read(id);
-                            System.out.println("Origem " + viagem.getOrigem());
-                            System.out.println("Destino: " + viagem.getDestino());
-                            System.out.println("Data " + viagem.getDataViagem());
+                            BuscaViagem bv = new BuscaViagem(ViagemDAO.read(id));
+                            setVisible(false);
+                            bv.setVisible(true);
                         break;    
                         
                 }
