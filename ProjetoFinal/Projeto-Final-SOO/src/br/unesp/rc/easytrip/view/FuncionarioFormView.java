@@ -10,7 +10,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import br.unesp.rc.easytrip.model.Funcionario;
 import br.unesp.rc.easytrip.dao.FuncionarioDAO;
 
 /**
@@ -197,11 +196,10 @@ public class FuncionarioFormView extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField4ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat formato = new SimpleDateFormat("dd/mm/yyyy");
         String nome = jTextField1.getText();
         String cpf = jTextField2.getText();
         Date data = null;
-        System.out.println(id);
         if (jTextField3.getText().equals("")){}
         else{
             try {
