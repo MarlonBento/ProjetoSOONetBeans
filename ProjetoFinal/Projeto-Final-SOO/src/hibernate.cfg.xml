@@ -4,7 +4,7 @@
   <session-factory>
     <!--  Database connection settings  -->
     <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-    <property name="hibernate.connection.url">jdbc:mysql://localhost/projetobd?useSSL=false</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost/projetoeasytrip?useSSL=false</property>
     <property name="hibernate.connection.username">root</property>
     <property name="hibernate.connection.password">35336222</property>
     <!-- SQL  dialect -->
@@ -20,5 +20,7 @@
     <mapping class="br.unesp.rc.easytrip.model.Viagem"/>
     <mapping class="br.unesp.rc.easytrip.model.Veiculo"/>
     <mapping class="br.unesp.rc.easytrip.model.Endereco"/>
+    <mapping class="br.unesp.rc.easytrip.model.Fisico"/>
+    <mapping class="br.unesp.rc.easytrip.model.Juridico"/>
   </session-factory>
 </hibernate-configuration>

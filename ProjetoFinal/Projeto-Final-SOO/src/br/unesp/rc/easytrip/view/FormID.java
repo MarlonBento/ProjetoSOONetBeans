@@ -5,12 +5,14 @@
  */
 package br.unesp.rc.easytrip.view;
 
+import br.unesp.rc.easytrip.dao.FisicoDAO;
 import br.unesp.rc.easytrip.model.Funcionario;
 import br.unesp.rc.easytrip.model.Usuario;
 import br.unesp.rc.easytrip.model.Viagem;
 import br.unesp.rc.easytrip.dao.FuncionarioDAO;
 import br.unesp.rc.easytrip.dao.UsuarioDAO;
 import br.unesp.rc.easytrip.dao.ViagemDAO;
+import br.unesp.rc.easytrip.model.Fisico;
 
 /**
  *
@@ -125,9 +127,17 @@ public class FormID extends javax.swing.JFrame {
                         break;
                         
                     case "AlterarU":
-                        UsuarioFormView ufv = new UsuarioFormView(0, id);
+                       Fisico fisico = FisicoDAO.read(id);
+                        if (fisico == null){
+                            JuridicoFormView ufv = new JuridicoFormView(2, id);
+                            setVisible(false);
+                            ufv.setVisible(true);
+                        }
+                        else{
+                        FisicoFormView ufv = new FisicoFormView(2, id);
                         setVisible(false);
                         ufv.setVisible(true);
+                        }
                         break;   
                         
                     case "DeletarU":

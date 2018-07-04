@@ -225,11 +225,10 @@ public class FuncionarioFormView extends javax.swing.JFrame {
             VeiculoFormView form = new VeiculoFormView(idFun);
             form.setVisible(true);}
         else{
-                FuncionarioDAO.update(id, nome, cpf, salario, data,  contato);
-                setVisible(false);
-                Principal principal = new Principal();
-                principal.setVisible(true);        
-                 
+            FuncionarioDAO.update(id, nome, cpf, salario, data,  contato);
+            setVisible(false);
+            Principal principal = new Principal();
+            principal.setVisible(true);            
             }
         
     }//GEN-LAST:event_jButton1ActionPerformed

@@ -1,6 +1,7 @@
 package br.unesp.rc.easytrip.model;
 
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.CascadeType;
@@ -10,32 +11,27 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.OneToMany;
-import javax.persistence.Table;
 
 
 @Entity
-@Table
-public class Usuario{
+@Inheritance(strategy = InheritanceType.JOINED)
+public class Usuario implements Serializable{
 
     private Integer id;
-    private String nome;
-    private Integer idade;
-    private String estadoCivil;
-    private String cpf;
-    private String contato;
+    String nome;
+    String contato;
     private List <Endereco> enderecos = new ArrayList<>();
 
 	
 
 	public Usuario() {}
 
-	public Usuario(String nome, Integer idade, String estadoCivil, String cpf, String contato) {
+	public Usuario(String nome, String contato) {
 		super();
 		this.nome = nome;
-		this.idade = idade;
-		this.estadoCivil = estadoCivil;
-		this.cpf = cpf;
 		this.contato = contato;
 	}
 
@@ -44,7 +40,7 @@ public class Usuario{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "id")
+	@Column(name = "idUsr")
 	public Integer getId() {
 		return id;
 	}
@@ -63,24 +59,6 @@ public class Usuario{
 	}
 
 
-	public Integer getIdade() {
-		return idade;
-	}
-
-	public void setIdade(Integer idade) {
-		this.idade = idade;
-	}
-
-
-	public String getEstadoCivil() {
-		return estadoCivil;
-	}
-
-	public void setEstadoCivil(String estadoCivil) {
-		this.estadoCivil = estadoCivil;
-	}
-
-
 	@OneToMany (cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	public List <Endereco> getEnderecos() {
 		return enderecos;
@@ -90,14 +68,7 @@ public class Usuario{
 		this.enderecos = enderecos;
 	}
 
-	public String getCpf() {
-		return cpf;
-	}
-
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
-	}
-
+	
 	public String getContato() {
 		return contato;
 	}

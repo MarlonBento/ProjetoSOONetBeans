@@ -135,9 +135,9 @@ public class UsuarioView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void InserirUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InserirUActionPerformed
-        UsuarioFormView UForm = new UsuarioFormView(1, 0);
+        FisJur fj = new FisJur(1,0);
         setVisible(false);
-        UForm.setVisible(true);
+        fj.setVisible(true);
      
     }//GEN-LAST:event_InserirUActionPerformed
 

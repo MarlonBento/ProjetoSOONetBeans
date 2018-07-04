@@ -18,9 +18,8 @@ public class Main {
 	public static void main(String[] args) throws ParseException {
            Inicial inicial = new Inicial();   
            inicial.setVisible(true);
-        }
-        
-        
+        }       
+}
 	/*	entrada = new Scanner(System.in);   
         int escolha;  
         boolean continuar;
@@ -138,22 +137,22 @@ public class Main {
 
 		
 		do {   
-		    System.out.println("Qual opcao deseja realizar?");
-	        System.out.println("1. Inserir Cliente");
-	        System.out.println("2. Alterar Cliente");
-	        System.out.println("3. Deletar Cliente");
-	        System.out.println("4. Buscar Cliente");
-	        System.out.println("5. Adicionar novo endereco a cliente");
-	        System.out.println("6. Listar Clientes");
-	        System.out.println("0. Voltar");
-	        System.out.println("Opcao:");
+                    System.out.println("Qual opcao deseja realizar?");
+                    System.out.println("1. Inserir Cliente");
+                    System.out.println("2. Alterar Cliente");
+                    System.out.println("3. Deletar Cliente");
+                    System.out.println("4. Buscar Cliente");
+                    System.out.println("5. Adicionar novo endereco a cliente");
+                    System.out.println("6. Listar Clientes");
+                    System.out.println("0. Voltar");
+                    System.out.println("Opcao:");
 	        
 	       
-	        escolha = Integer.parseInt(entradaU.nextLine());  
+                    escolha = Integer.parseInt(entradaU.nextLine());  
 	       
-	        switch (escolha) {  
+                    switch (escolha) {  
 		        case 1:  
-		        	Endereco endereco = new Endereco();
+                            Endereco endereco = new Endereco();
 		        	System.out.println("Digite o nome do Usuario");
 		        	String nome = usr.nextLine();
 		        	System.out.println("Digite a idade do Usuario");
@@ -340,5 +339,5 @@ public class Main {
 		
 		
 	*/
-	}
+	
 

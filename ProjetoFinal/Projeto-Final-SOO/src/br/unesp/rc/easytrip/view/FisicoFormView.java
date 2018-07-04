@@ -5,27 +5,31 @@
  */
 package br.unesp.rc.easytrip.view;
 
+import br.unesp.rc.easytrip.dao.FisicoDAO;
+import br.unesp.rc.easytrip.dao.JuridicoDAO;
 import br.unesp.rc.easytrip.model.Usuario;
 import br.unesp.rc.easytrip.dao.UsuarioDAO;
+import br.unesp.rc.easytrip.model.Fisico;
+import br.unesp.rc.easytrip.model.Juridico;
 
 /**
  *
  * @author Marlo
  */
-public class UsuarioFormView extends javax.swing.JFrame {
+public class FisicoFormView extends javax.swing.JFrame {
 
     /**
-     * Creates new form UsuarioFormView
+     * Creates new form FisicoFormView
      */
     Integer opt;
     Integer idU;
-    public UsuarioFormView(int modo, int id) {
+    public FisicoFormView(int modo, int id) {
         opt = modo;
         idU = id;
         initComponents();
     }
 
-    private UsuarioFormView() {
+    private FisicoFormView() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -80,7 +84,7 @@ public class UsuarioFormView extends javax.swing.JFrame {
 
         jLabel1.setText("Nome");
 
-        jLabel2.setText("CPF");
+        jLabel2.setText("CPF/CNPJ");
 
         jLabel3.setText("Estado Civil");
 
@@ -103,7 +107,7 @@ public class UsuarioFormView extends javax.swing.JFrame {
         });
 
         jLabel6.setFont(new java.awt.Font("Gabriola", 0, 24)); // NOI18N
-        jLabel6.setText("Usuario");
+        jLabel6.setText("Fisico");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -132,12 +136,14 @@ public class UsuarioFormView extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel1)
-                                    .addComponent(jLabel2)
                                     .addComponent(jLabel4))
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addContainerGap(143, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(10, 10, 10)
+                                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel5)
                                 .addGap(0, 0, Short.MAX_VALUE))))))
@@ -197,29 +203,32 @@ public class UsuarioFormView extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField5ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Usuario usuario = new Usuario();
-        String nome  = jTextField1.getText();
-        String cpf =  jTextField2.getText();
-        String estadoCivil = jTextField3.getText();
-        Integer idade;
-        if(jTextField4.getText().equals("")){idade=null;}
-        else{idade = Integer.parseInt(jTextField4.getText());}
+       
+
+            String nome = jTextField1.getText();
+            String cpf =  jTextField2.getText();
+            String estadoCivil = jTextField3.getText();
+            Integer idade;
+            if(jTextField4.getText().equals("")){idade=null;}
+            else{idade = Integer.parseInt(jTextField4.getText());}
+            String contato = jTextField5.getText();
+            
+            setVisible(false);
         
+            if (opt == 1){
+                Integer idFis =  FisicoDAO.create(nome, idade, estadoCivil, cpf, contato);
+                EnderecoFormView form = new EnderecoFormView(idFis);
+                form.setVisible(true);
+            }
         
-        String contato = jTextField5.getText();
-        setVisible(false);
+            else{
+                FisicoDAO.update(idU, nome, idade, estadoCivil, cpf, contato);
+                Principal principal = new Principal();
+                 principal.setVisible(true);           
+            }
         
-        if (opt == 1){
-            Integer idUsr =  UsuarioDAO.create(nome, idade, estadoCivil, cpf, contato);
-            EnderecoFormView form = new EnderecoFormView(idUsr);
-            form.setVisible(true);
-        }
-        
-        else{
-           UsuarioDAO.update(idU, nome, idade, estadoCivil, cpf, contato);
-           Principal principal = new Principal();
-           principal.setVisible(true);           
-        }
+       
+    
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -243,14 +252,15 @@ public class UsuarioFormView extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(UsuarioFormView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FisicoFormView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(UsuarioFormView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FisicoFormView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(UsuarioFormView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FisicoFormView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(UsuarioFormView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FisicoFormView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
