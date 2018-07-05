@@ -36,7 +36,7 @@ public class UsuarioView extends javax.swing.JFrame {
         RemoverU = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         BuscarU = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        buttonVoltar = new javax.swing.JButton();
         addEnd = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -68,7 +68,7 @@ public class UsuarioView extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Gabriola", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText(" MENU FUNCIONARIO");
+        jLabel1.setText(" MENU USUARIO");
 
         BuscarU.setFont(new java.awt.Font("Gabriola", 0, 18)); // NOI18N
         BuscarU.setText("Buscar Usuario");
@@ -78,10 +78,10 @@ public class UsuarioView extends javax.swing.JFrame {
             }
         });
 
-        jButton6.setText("Voltar");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        buttonVoltar.setText("Voltar");
+        buttonVoltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                buttonVoltarActionPerformed(evt);
             }
         });
 
@@ -101,7 +101,7 @@ public class UsuarioView extends javax.swing.JFrame {
                 .addGap(90, 90, 90)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton6))
+                .addComponent(buttonVoltar))
             .addGroup(layout.createSequentialGroup()
                 .addGap(50, 50, 50)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -116,7 +116,7 @@ public class UsuarioView extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton6))
+                    .addComponent(buttonVoltar))
                 .addGap(10, 10, 10)
                 .addComponent(InserirU, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -159,11 +159,11 @@ public class UsuarioView extends javax.swing.JFrame {
         fID.setVisible(true);
     }//GEN-LAST:event_BuscarUActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void buttonVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonVoltarActionPerformed
      setVisible(false);
      Inicial inicial = new Inicial();   
      inicial.setVisible(true);
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_buttonVoltarActionPerformed
 
     private void addEndActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addEndActionPerformed
         FormID fID = new FormID("addEnd");
@@ -213,7 +213,7 @@ public class UsuarioView extends javax.swing.JFrame {
     private javax.swing.JButton InserirU;
     private javax.swing.JButton RemoverU;
     private javax.swing.JButton addEnd;
-    private javax.swing.JButton jButton6;
+    private javax.swing.JButton buttonVoltar;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

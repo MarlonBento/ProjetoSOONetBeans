@@ -2,12 +2,12 @@ package br.unesp.rc.easytrip.dao;
 
 
 
-import java.util.List;
+
 import org.hibernate.Session;
 
 import br.unesp.rc.easytrip.utils.Connection;
 import br.unesp.rc.easytrip.model.Fisico;
-import br.unesp.rc.easytrip.model.Usuario;
+
 
 
 public class FisicoDAO {
