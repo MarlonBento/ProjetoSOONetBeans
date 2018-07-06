@@ -4,7 +4,7 @@
   <session-factory>
     <!--  Database connection settings  -->
     <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-    <property name="hibernate.connection.url">jdbc:mysql://localhost/projetoeasytrip?useSSL=false</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost/easytripprojeto?useSSL=false</property>
     <property name="hibernate.connection.username">root</property>
     <property name="hibernate.connection.password">35336222</property>
     <!-- SQL  dialect -->

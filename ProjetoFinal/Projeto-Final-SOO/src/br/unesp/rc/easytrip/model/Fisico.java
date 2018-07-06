@@ -18,9 +18,9 @@ import javax.persistence.PrimaryKeyJoinColumn;
 public class Fisico extends Usuario  {
 
 
-    private String cpf;
-    private String estadoCivil;
-    private Integer idade;
+    String cpf;
+    String estadoCivil;
+    Integer idade;
     
     public Fisico(){}
 
@@ -28,7 +28,7 @@ public class Fisico extends Usuario  {
                 super();
 		this.nome = nome;
 		this.idade = idade;
-		this.estadoCivil = estadoCivil;
+		this.estadoCivil = ec;
                 this.cpf = cpf;
 		this.contato = contato;
     }

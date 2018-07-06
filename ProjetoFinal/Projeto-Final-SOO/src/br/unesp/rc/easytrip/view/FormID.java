@@ -148,7 +148,7 @@ public class FormID extends javax.swing.JFrame {
                         break;
                     
                     case "BuscarU":
-                        BuscaUsuario bu = new BuscaUsuario(UsuarioDAO.read(id));
+                        BuscaUsuario bu = new BuscaUsuario(id);
                         setVisible(false);
                         bu.setVisible(true);
                         break;
